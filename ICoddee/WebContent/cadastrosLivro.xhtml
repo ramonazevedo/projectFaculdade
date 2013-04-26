@@ -34,7 +34,7 @@
 				</li>
 				<li>
 					<h:outputText value="Ano" styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.ano}" id="Ano" required="true" requiredMessage="O campo Ano é obrigatório." converterMessage="Digite apenas numeros." validatorMessage="Ano fora do formato.">
+				 	<h:inputText value="#{cadastroLivros.livro.ano}" id="no" required="true" requiredMessage="O campo Ano é obrigatório." converterMessage="Digite apenas numeros." validatorMessage="Ano fora do formato.">
 				 	<f:validateDoubleRange maximum="2013" minimum="1501"></f:validateDoubleRange>
 				 	</h:inputText>
 				 	<h:message for="ano" styleClass="label label-important" />
