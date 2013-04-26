@@ -3,6 +3,7 @@
 	<name>ICoddee</name>
 	<comment></comment>
 	<projects>
+		<project>ICoddeeModelo</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
