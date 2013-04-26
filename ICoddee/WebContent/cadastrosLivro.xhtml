@@ -34,14 +34,17 @@
 				</li>
 				<li>
 					<h:outputText value="Ano" styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.ano}" id="no" required="true" requiredMessage="O campo Ano é obrigatório." converterMessage="Digite apenas numeros." validatorMessage="Ano fora do formato.">
+				 	<h:inputText value="#{cadastroLivros.livro.ano}" id="ano" required="true" requiredMessage="O campo Ano é obrigatório." converterMessage="Digite apenas numeros." validatorMessage="Ano invalido.">
 				 	<f:validateDoubleRange maximum="2013" minimum="1501"></f:validateDoubleRange>
 				 	</h:inputText>
 				 	<h:message for="ano" styleClass="label label-important" />
 				 </li>
 				<li>
 					<h:outputText value="Quantidade de Paginas"	styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.paginas}"></h:inputText>
+				 	<h:inputText value="#{cadastroLivros.livro.paginas}" id="quantPagias" required="true" requiredMessage="O campor Quantidade de paginas é obrigatório." validatorMessage="Quantidade de paginas inválida." converterMessage="Digite apena numeros.">
+				 		<f:validateDoubleRange minimum="1" maximum="5000"></f:validateDoubleRange>
+				 	</h:inputText>
+				 	<h:message for="quantPagias" styleClass="label label-important" />
 				</li>
 				<li>
 					<h:outputText value="Cativo" styleClass="formLabel" /> 
