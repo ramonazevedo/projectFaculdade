@@ -14,22 +14,30 @@
 	<h4>Cadastro de Livros</h4>
 
 		<h:form>
+		<h:messages globalOnly="true"/>
 			<ul>
 				<li>	
 					<h:outputText value="Titulo" styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.titulo}"></h:inputText>
+				 	<h:inputText value="#{cadastroLivros.livro.titulo}" id="titulo" required="true" requiredMessage="O campo Titulo é obrigatório." />
+				 	<h:message for="titulo" styleClass="label label-important" />
+    				
 				</li>
 				<li>
 					<h:outputText value="Autor" styleClass="formLabel" /> 
-					<h:inputText value="#{cadastroLivros.livro.autor.nome}"></h:inputText>
+					<h:inputText value="#{cadastroLivros.livro.autor.nome}" id="autor" required="true" requiredMessage="O campo Autor é obrigatório."></h:inputText>
+					<h:message for="autor" styleClass="label label-important" />
 				</li>
 				<li>
 					<h:outputText value="Editora" styleClass="formLabel" /> 
-					<h:inputText value="#{cadastroLivros.livro.editora.nome}"></h:inputText>
+					<h:inputText value="#{cadastroLivros.livro.editora.nome}" id="editora" required="true" requiredMessage="O campo Editora é obrigatório."></h:inputText>
+					<h:message for="editora" styleClass="label label-important" />
 				</li>
 				<li>
 					<h:outputText value="Ano" styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.ano}"></h:inputText>
+				 	<h:inputText value="#{cadastroLivros.livro.ano}" id="Ano" required="true" requiredMessage="O campo Ano é obrigatório." converterMessage="Digite apenas numeros." validatorMessage="Ano fora do formato.">
+				 	<f:validateDoubleRange maximum="2013" minimum="1501"></f:validateDoubleRange>
+				 	</h:inputText>
+				 	<h:message for="ano" styleClass="label label-important" />
 				 </li>
 				<li>
 					<h:outputText value="Quantidade de Paginas"	styleClass="formLabel" />
