@@ -11,8 +11,43 @@
 	    iCoddee - Cadastro De Livros
 	</ui:define>
 	<ui:define name="conteudo">
-	    cadastro de livros aqui.
-	
+	<h4>Cadastro de Livros</h4>
+
+		<h:form>
+			<ul>
+				<li>	
+					<h:outputText value="Titulo" styleClass="formLabel" />
+				 	<h:inputText value="#{cadastroLivros.livro.titulo}"></h:inputText>
+				</li>
+				<li>
+					<h:outputText value="Autor" styleClass="formLabel" /> 
+					<h:inputText value="#{cadastroLivros.livro.autor.nome}"></h:inputText>
+				</li>
+				<li>
+					<h:outputText value="Editora" styleClass="formLabel" /> 
+					<h:inputText value="#{cadastroLivros.livro.editora.nome}"></h:inputText>
+				</li>
+				<li>
+					<h:outputText value="Ano" styleClass="formLabel" />
+				 	<h:inputText value="#{cadastroLivros.livro.ano}"></h:inputText>
+				 </li>
+				<li>
+					<h:outputText value="Quantidade de Paginas"	styleClass="formLabel" />
+				 	<h:inputText value="#{cadastroLivros.livro.paginas}"></h:inputText>
+				</li>
+				<li>
+					<h:outputText value="Cativo" styleClass="formLabel" /> 
+					<h:selectBooleanCheckbox value="#{cadastroLivros.livro.cativo}" />
+				</li>
+				<li>
+					<br />
+					<h:commandButton value="Enviar" action="#{cadastroLivros.cadastrarLivro}" styleClass="btn" />
+					<h:commandButton type="reset" value="Limpar" styleClass="btn"/>	
+				</li>
+
+			</ul>
+		</h:form>
+
 	</ui:define>
 
 </ui:composition>

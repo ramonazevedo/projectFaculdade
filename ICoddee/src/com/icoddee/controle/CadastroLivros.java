@@ -3,6 +3,8 @@ package com.icoddee.controle;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
+import com.icoddee.entidade.Autor;
+import com.icoddee.entidade.Editora;
 import com.icoddee.entidade.Livro;
 
 @ManagedBean
@@ -10,11 +12,17 @@ import com.icoddee.entidade.Livro;
 public class CadastroLivros {
 
 	private Livro livro;
-	
+	private Autor autor;
+	private Editora editora;
 	
 	
 	public CadastroLivros() {
 		this.livro = new Livro();
+		this.autor = new Autor();
+		this.editora = new Editora();
+		
+		this.livro.setAutor(autor);
+		this.livro.setEditora(editora);
 	}
 
 
