@@ -12,8 +12,7 @@
 	</ui:define>
 	<ui:define name="conteudo">
 	<h4>Lista de livros emprestados</h4>
-	
-	<h:dataTable border= "1" value="#{controleEmprestimo.emprestimos}" var="emprestimo">
+	<h:dataTable value="#{controleEmprestimo.emprestimos}" var="emprestimo" > 
 	<h:column>
 		<f:facet name="header">#</f:facet>
 		#
