@@ -29,16 +29,20 @@ public class ControleEmprestimo {
 		emprestimos.add(new Emprestimo( 1 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
 		emprestimos.get(0).getAluno().setNome("jocelio lima");
 		emprestimos.get(0).getLivro().setTitulo("Use a cabeça Java Web");
-		emprestimos.add(new Emprestimo( 1 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
+		
+		emprestimos.add(new Emprestimo( 2 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
 		emprestimos.get(1).getAluno().setNome("Daniel");
 		emprestimos.get(1).getLivro().setTitulo("Html5 & Css3");
-		emprestimos.add(new Emprestimo( 1 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
+		
+		emprestimos.add(new Emprestimo( 3 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
 		emprestimos.get(2).getAluno().setNome("Henrique");
 		emprestimos.get(2).getLivro().setTitulo("Assembly Avançado");
-		emprestimos.add(new Emprestimo( 1 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
+		
+		emprestimos.add(new Emprestimo( 4 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
 		emprestimos.get(3).getAluno().setNome("Felipe");
 		emprestimos.get(3).getLivro().setTitulo("JSP + Servlets");
-		emprestimos.add(new Emprestimo( 1 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
+		
+		emprestimos.add(new Emprestimo( 5 , new Aluno(),  new Livro() ,"20/04/2013","01/05/2013"));
 		emprestimos.get(4).getAluno().setNome("Ricardo");
 		emprestimos.get(4).getLivro().setTitulo("Bite code");
 		
