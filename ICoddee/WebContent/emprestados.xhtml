@@ -11,6 +11,7 @@
 	    iCoddee - Emprestimo de Livros
 	</ui:define>
 	<ui:define name="conteudo">
+	<h4>Lista de livros emprestados</h4>
 	
 	<h:dataTable border= "1" value="#{controleEmprestimo.emprestimos}" var="emprestimo">
 	<h:column>
@@ -23,14 +24,14 @@
 	</h:column>	
 	
 	<h:column>
-	<f:facet name="header">Aluno</f:facet>
-	<h:outputText value="#{emprestimo.aluno.nome}" />
-	</h:column>
-	
-	<h:column>
 	<f:facet name="header">Livro</f:facet>
 	<h:outputText value="#{emprestimo.livro.titulo}" />
 	</h:column>
+	
+	<h:column>
+	<f:facet name="header">Aluno</f:facet>
+	<h:outputText value="#{emprestimo.aluno.nome}" />
+	</h:column>	
 	
 	<h:column>
 	<f:facet name="header">DataEmprestimo</f:facet>

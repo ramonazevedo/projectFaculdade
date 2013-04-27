@@ -42,9 +42,7 @@ public class ControleEmprestimo {
 		emprestimos.get(4).getAluno().setNome("Ricardo");
 		emprestimos.get(4).getLivro().setTitulo("Bite code");
 		
-	
-		
-	
+
 	}
 
 	public List<Emprestimo> getEmprestimos() {
