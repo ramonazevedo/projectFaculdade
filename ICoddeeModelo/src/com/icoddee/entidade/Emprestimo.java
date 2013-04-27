@@ -7,6 +7,14 @@ public class Emprestimo {
 	private Livro livro;
 	private String dataEmprestimo;
 	private String dataDevolucao;
+	
+	public Emprestimo(int id, Aluno aluno, Livro livro,String dataEmprestimo,String dataDevolucao) {
+		this.id = id;
+		this.aluno = aluno;
+		this.livro = livro;
+		this.dataEmprestimo = dataEmprestimo;
+		this.dataDevolucao = dataDevolucao;
+	}
 	public int getId() {
 		return id;
 	}

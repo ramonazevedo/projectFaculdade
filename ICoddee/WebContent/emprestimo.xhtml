@@ -12,11 +12,38 @@
 	</ui:define>
 	<ui:define name="conteudo">
 	
+	<h:dataTable border= "1" value="#{controleEmprestimo.emprestimos}" var="emprestimo">
+	<h:column>
+		<f:facet name="header">#</f:facet>
+		#
+	</h:column>>
+	<h:column>
+	<f:facet name="header">id</f:facet>
+	<h:outputText value="#{emprestimo.id}" />
+	</h:column>	
 	
+	<h:column>
+	<f:facet name="header">Aluno</f:facet>
+	<h:outputText value="#{emprestimo.aluno.nome}" />
+	</h:column>
 	
+	<h:column>
+	<f:facet name="header">Livro</f:facet>
+	<h:outputText value="#{emprestimo.livro.titulo}" />
+	</h:column>
 	
+	<h:column>
+	<f:facet name="header">DataEmprestimo</f:facet>
+	<h:outputText value="#{emprestimo.dataEmprestimo}" />
+	</h:column>
 	
+	<h:column>
+	<f:facet name="header">DataDevolução</f:facet>
+	<h:outputText value="#{emprestimo.dataDevolucao}" />
+	</h:column>
 	
+	</h:dataTable>
+
 	</ui:define>
 </ui:composition>
 </html>
