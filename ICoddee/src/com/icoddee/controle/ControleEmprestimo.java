@@ -34,7 +34,6 @@ public class ControleEmprestimo {
 		
 		emprestimos.add(new Emprestimo( 5 , new Aluno("Ricardo"),  new Livro("Bite code") ,"20/04/2013","01/05/2013"));
 		
-
 	}
 
 	public List<Emprestimo> getEmprestimos() {
