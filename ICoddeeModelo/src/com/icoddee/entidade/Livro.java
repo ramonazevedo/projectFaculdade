@@ -18,6 +18,10 @@ public class Livro {
 		
 	}
 	
+	public Livro(String titulo){
+		this.titulo = titulo;
+	}
+	
 	public int getId() {
 		return id;
 	}
