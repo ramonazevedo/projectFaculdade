@@ -11,6 +11,10 @@
 	    iCoddee - Livros
 	</ui:define>
 	<ui:define name="conteudo">
+	<h:form>
+	
+	<h:commandButton action="#{controleLivros.novo}" value="Novo Livro" styleClass="btn" /> <br />
+	
 	    <h:dataTable value="#{controleLivros.livros}" var="livro">
 	    	<h:column>
 	    	<f:facet name="header"> Titulo </f:facet>
@@ -47,7 +51,21 @@
 	    	#{livro.cativo}
 	    	</h:column>
 	    	
+	    	<h:column>
+	    	<h:commandLink action="#{controleLivros.remover}" value="Remover" >
+		    	<f:setPropertyActionListener target="#{controleLivros.livro}" value="#{livro}" />
+	    	</h:commandLink>
+	    	-
+	    	
+	    	<h:commandLink action="#{controleLivros.editar}" value="Editar">
+		    	<f:setPropertyActionListener target="#{controleLivros.livro}" value="#{livro}" />
+	    	</h:commandLink>    	
+	    	</h:column>
+	    	
 	    </h:dataTable>
+	    
+	</h:form>
+	
 	</ui:define>
 </ui:composition>
 </html>

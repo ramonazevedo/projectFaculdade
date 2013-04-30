@@ -13,15 +13,19 @@ public class Livro {
 	private int ano;
 	private boolean cativo;
 	private int paginas;
-	private String isbn;
+	private int isbn;
 	
 	public Livro(){
 		
 	}
+	public Livro(Autor autor, Editora editora){
+		this.autor = autor;
+		this.editora = editora;
+	}
 	
 	
 	public Livro(int id, String titulo, Autor autor, Editora editora, int ano,
-			boolean cativo, int paginas, String isbn) {
+			boolean cativo, int paginas, int isbn) {
 		this.id = id;
 		this.titulo = titulo;
 		this.autor = autor;
@@ -80,12 +84,12 @@ public class Livro {
 		this.ano = ano;
 	}
 	
-	public String getIsbn() {
+	public int getIsbn() {
 		return isbn;
 	}
 
 
-	public void setIsbn(String isbn) {
+	public void setIsbn(int isbn) {
 		this.isbn = isbn;
 	}
 

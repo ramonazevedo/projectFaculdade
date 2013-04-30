@@ -7,7 +7,7 @@
       }
      
 	  .jumbotron{
-		height: 450px;
+		min-height: 450px;
 		}
 		.jumbotron .btn{
 		margin-right: 8px;

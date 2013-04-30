@@ -18,41 +18,51 @@
 			<ul>
 				<li>	
 					<h:outputText value="Titulo" styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.titulo}" id="titulo" required="true" requiredMessage="O campo Titulo é obrigatório." />
+				 	<h:inputText value="#{controleLivros.livro.titulo}" id="titulo" required="true" requiredMessage="O campo Titulo é obrigatório." />
 				 	<h:message for="titulo" styleClass="label label-important" />
     				
 				</li>
 				<li>
 					<h:outputText value="Autor" styleClass="formLabel" /> 
-					<h:inputText value="#{cadastroLivros.livro.autor.nome}" id="autor" required="true" requiredMessage="O campo Autor é obrigatório."></h:inputText>
+					<h:inputText value="#{controleLivros.livro.autor.nome}" id="autor" required="true" requiredMessage="O campo Autor é obrigatório."></h:inputText>
 					<h:message for="autor" styleClass="label label-important" />
 				</li>
 				<li>
 					<h:outputText value="Editora" styleClass="formLabel" /> 
-					<h:inputText value="#{cadastroLivros.livro.editora.nome}" id="editora" required="true" requiredMessage="O campo Editora é obrigatório."></h:inputText>
+					<h:inputText value="#{controleLivros.livro.editora.nome}" id="editora" required="true" requiredMessage="O campo Editora é obrigatório."></h:inputText>
 					<h:message for="editora" styleClass="label label-important" />
 				</li>
 				<li>
 					<h:outputText value="Ano" styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.ano}" id="ano" required="true" requiredMessage="O campo Ano é obrigatório." converterMessage="Digite apenas numeros." validatorMessage="Ano invalido.">
+				 	<h:inputText value="#{controleLivros.livro.ano}" id="ano" required="true" requiredMessage="O campo Ano é obrigatório." converterMessage="Digite apenas numeros." validatorMessage="Ano invalido.">
 				 	<f:validateDoubleRange maximum="2013" minimum="1501"></f:validateDoubleRange>
 				 	</h:inputText>
 				 	<h:message for="ano" styleClass="label label-important" />
 				 </li>
 				<li>
 					<h:outputText value="Quantidade de Paginas"	styleClass="formLabel" />
-				 	<h:inputText value="#{cadastroLivros.livro.paginas}" id="quantPaginas" required="true" requiredMessage="O campor Quantidade de paginas é obrigatório." validatorMessage="Quantidade de paginas inválida." converterMessage="Digite apena numeros.">
+				 	<h:inputText value="#{controleLivros.livro.paginas}" id="quantPaginas" required="true" requiredMessage="O campor Quantidade de paginas é obrigatório." validatorMessage="Quantidade de paginas inválida." converterMessage="Digite apena numeros.">
 				 		<f:validateDoubleRange minimum="1" maximum="5000"></f:validateDoubleRange>
 				 	</h:inputText>
 				 	<h:message for="quantPagnias" styleClass="label label-important" />
 				</li>
 				<li>
+					<h:outputText value="ISBN"	styleClass="formLabel" />
+				 	<h:inputText value="#{controleLivros.livro.isbn}" id="isbn" required="true" requiredMessage="O campor ISBN é obrigatório." validatorMessage="Isbn inválido." converterMessage="Digite apena numeros.">
+				 		<f:validateDoubleRange minimum="1"></f:validateDoubleRange>
+				 	</h:inputText>
+				 	<h:message for="isbn" styleClass="label label-important" />
+				</li>
+				
+				
+				
+				<li>
 					<h:outputText value="Cativo" styleClass="formLabel" /> 
-					<h:selectBooleanCheckbox value="#{cadastroLivros.livro.cativo}" />
+					<h:selectBooleanCheckbox value="#{controleLivros.livro.cativo}" />
 				</li>
 				<li>
 					<br />
-					<h:commandButton value="Enviar" action="#{cadastroLivros.cadastrarLivro}" styleClass="btn" />
+					<h:commandButton value="Enviar" action="#{controleLivros.salvar}" styleClass="btn" />
 					<h:commandButton type="reset" value="Limpar" styleClass="btn"/>	
 				</li>
 
