@@ -1,18 +1,33 @@
 package com.icoddee.entidade;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+
 /**
  * @author Jocélio Lima
  *
  */
+@Entity
 public class Livro {
-	
+	@Id
+	@GeneratedValue
 	private int id;
+	@Column
 	private String titulo;
+	@OneToOne
 	private Autor autor;
+	@OneToOne
 	private Editora editora;
+	@Column
 	private int ano;
+	@Column
 	private boolean cativo;
+	@Column
 	private int paginas;
+	@Column
 	private int isbn;
 	
 	public Livro(){

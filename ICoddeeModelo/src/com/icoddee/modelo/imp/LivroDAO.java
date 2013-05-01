@@ -28,21 +28,22 @@ public class LivroDAO implements IRepositorioLivro {
 	}
 
 	@Override
-	public void excluir() {
+	public void excluir(Livro livro) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void atualizar() {
+	public void atualizar(Livro livro) {
 		// TODO Auto-generated method stub
-
+		
 	}
 
 	@Override
-	public void cadastrar() {
+	public void cadastrar(Livro livro) {
 		// TODO Auto-generated method stub
-
+		
 	}
+
 
 }

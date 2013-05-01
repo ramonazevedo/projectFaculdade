@@ -7,8 +7,8 @@ import com.icoddee.entidade.Livro;
 public interface IRepositorioLivro {
 	
 	public List<Livro> listar();
-	public void excluir();
-	public void atualizar();
-	public void cadastrar();
+	public void excluir(Livro livro);
+	public void atualizar(Livro livro);
+	public void cadastrar(Livro livro);
 
 }
