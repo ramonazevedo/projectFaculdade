@@ -3,41 +3,59 @@ package com.icoddee.modelo.imp;
 import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.Query;
 
 import com.icoddee.entidade.Livro;
 import com.icoddee.modelo.inter.IRepositorioLivro;
 
 public class RepositorioLivroJPA implements IRepositorioLivro {
-	
+
 	private EntityManager em;
-	
-	public RepositorioLivroJPA(EntityManager em){
+	private List<Livro> livros;
+
+	public RepositorioLivroJPA(EntityManager em) {
 		this.em = em;
-	}	
-	
+	}
+
 	@Override
 	public void excluir(Livro livro) {
-		// TODO Auto-generated method stub
-		
+		em.getTransaction().begin();
+		em.remove(livro);
+		em.getTransaction().commit();
+
 	}
 
 	@Override
 	public void atualizar(Livro livro) {
-		// TODO Auto-generated method stub
-		
+		em.getTransaction().begin();
+		em.merge(livro);
+		em.getTransaction().commit();
 	}
 
 	@Override
 	public void cadastrar(Livro livro) {
 		em.getTransaction().begin();
 		em.merge(livro);
-		em.getTransaction().commit();		
+		em.getTransaction().commit();
 	}
 
 	@Override
 	public List<Livro> listar() {
-		// TODO Auto-generated method stub
-		return null;
+		em.getTransaction().begin();
+		Query q = em.createQuery("select livro from Livro livro");
+		this.livros = q.getResultList();
+		em.getTransaction().commit();
+		return this.livros;
+	}
+
+	public Livro getLivro(Livro livro) {
+		Livro l = null;
+		if (livro.getId() != 0) {
+			em.getTransaction().begin();
+			l = em.find(Livro.class, livro.getId());
+			em.getTransaction().commit();
+		}
+		return l;
 	}
 
 }

@@ -10,5 +10,7 @@ public interface IRepositorioLivro {
 	public void excluir(Livro livro);
 	public void atualizar(Livro livro);
 	public void cadastrar(Livro livro);
+	public Livro getLivro(Livro livro);
+	
 
 }

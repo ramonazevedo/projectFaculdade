@@ -2,9 +2,14 @@ package com.icoddee.entidade;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+
+import org.hibernate.annotations.Cascade;
+import org.hibernate.annotations.CascadeType;
 
 /**
  * @author Jocélio Lima
@@ -16,11 +21,11 @@ public class Livro {
 	@GeneratedValue
 	private int id;
 	@Column
-	private String titulo;
-	@OneToOne
-	private Autor autor;
-	@OneToOne
-	private Editora editora;
+	private String titulo;  
+	@Column
+	private String autor;
+	@Column
+	private String editora;
 	@Column
 	private int ano;
 	@Column
@@ -33,13 +38,13 @@ public class Livro {
 	public Livro(){
 		
 	}
-	public Livro(Autor autor, Editora editora){
+	public Livro(String autor, String editora){
 		this.autor = autor;
 		this.editora = editora;
 	}
 	
 	
-	public Livro(int id, String titulo, Autor autor, Editora editora, int ano,
+	public Livro(int id, String titulo, String autor, String editora, int ano,
 			boolean cativo, int paginas, int isbn) {
 		this.id = id;
 		this.titulo = titulo;
@@ -62,16 +67,16 @@ public class Livro {
 	public void setId(int id) {
 		this.id = id;
 	}
-	public Autor getAutor() {
+	public String getAutor() {
 		return autor;
 	}
-	public void setAutor(Autor autor) {
+	public void setAutor(String autor) {
 		this.autor = autor;
 	}
-	public Editora getEditora() {
+	public String getEditora() {
 		return editora;
 	}
-	public void setEditora(Editora editora) {
+	public void setEditora(String editora) {
 		this.editora = editora;
 	}
 	public int getPaginas() {
@@ -111,7 +116,7 @@ public class Livro {
 
 	@Override
 	public String toString() {
-		return "Livro [id=" + id + ", autor=" + autor.getNome() + ", editora=" + editora.getNome()
+		return "Livro [id=" + id + ", autor=" + autor + ", editora=" + editora
 				+ ", paginas=" + paginas + ", titulo=" + titulo + ", cativo="
 				+ cativo + ", ano=" + ano + "]";
 	}
