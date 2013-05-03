@@ -5,11 +5,9 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
-import com.icoddee.entidade.Autor;
-import com.icoddee.entidade.Editora;
-import com.icoddee.entidade.Livro;
-import com.icoddee.modelo.imp.LivroDAO;
-import com.icoddee.modelo.inter.IRepositorioLivro;
+import com.icoddee.modelo.IRepositorioLivro;
+import com.icoddee.modelo.entidade.Livro;
+import com.icoddee.modelo.fabrica.IcoddeeFactory;
 
 @ManagedBean
 @SessionScoped
@@ -20,22 +18,21 @@ public class ControleLivros {
 	private Livro livro;
 	
 	public ControleLivros() {
-		this.livroDAO = new LivroDAO();
+		this.livroDAO = new IcoddeeFactory().criarLivroDAO(IcoddeeFactory.LivroJPA);
 		this.livros = livroDAO.listar();
 	}
 	public String novo(){
-		this.livro = new Livro(new Autor(), new Editora());
+		this.livro = new Livro();
 		return "cadastrosLivro";
 	}
 	
 	public String salvar(){
-		if(!livros.contains(livro))
-		this.livros.add(this.livro);
+		livroDAO.cadastrar(livro);
 		return "listaLivros";
 	}
 	
 	public String remover(){
-		livros.remove(livro);
+		livroDAO.excluir(livro);
 		return "listaLivros";
 	}
 	
@@ -45,7 +42,7 @@ public class ControleLivros {
 	}
 	
 	public List<Livro> getLivros() {
-		return livros;
+		return livros = livroDAO.listar();
 	}
 
 

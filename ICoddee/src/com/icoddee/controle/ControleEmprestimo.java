@@ -5,10 +5,11 @@ import java.util.List;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import com.icoddee.modelo.IRepositorioEmprestimo;
+import com.icoddee.modelo.entidade.Emprestimo;
+import com.icoddee.modelo.fabrica.IcoddeeFactory;
 
-import com.icoddee.entidade.Emprestimo;
-import com.icoddee.modelo.imp.RepositorioEmprestimo;
-import com.icoddee.modelo.inter.IRepositorioEmprestimo;
+
 
 
 @ManagedBean
@@ -20,7 +21,7 @@ public class ControleEmprestimo {
 	
 	
 	public ControleEmprestimo(){
-		this.repositorioEmprestimo = new RepositorioEmprestimo();
+		this.repositorioEmprestimo = new IcoddeeFactory().criarEmprestimoDAO(IcoddeeFactory.EmprestimoDAO);
 		this.emprestimos = repositorioEmprestimo.listaEmprestimos();
 	}
 
