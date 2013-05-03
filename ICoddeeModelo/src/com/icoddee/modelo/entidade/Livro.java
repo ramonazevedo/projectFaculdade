@@ -1,4 +1,4 @@
-package com.icoddee.entidade;
+package com.icoddee.modelo.entidade;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

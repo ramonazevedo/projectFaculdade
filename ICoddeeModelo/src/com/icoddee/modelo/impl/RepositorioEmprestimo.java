@@ -1,15 +1,24 @@
-package com.icoddee.modelo.imp;
+package com.icoddee.modelo.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.icoddee.entidade.Aluno;
-import com.icoddee.entidade.Emprestimo;
-import com.icoddee.entidade.Livro;
-import com.icoddee.modelo.inter.IRepositorioEmprestimo;
+import javax.persistence.EntityManager;
+
+import com.icoddee.modelo.IRepositorioEmprestimo;
+import com.icoddee.modelo.entidade.Aluno;
+import com.icoddee.modelo.entidade.Emprestimo;
+import com.icoddee.modelo.entidade.Livro;
 
 public class RepositorioEmprestimo implements IRepositorioEmprestimo{
+	
+	private EntityManager em;
+	
+	
 
+	public RepositorioEmprestimo(EntityManager em) {
+		this.em = em;
+	}
 	private List<Emprestimo> emprestimos;
 	@Override
 	public List<Emprestimo> listaEmprestimos(){

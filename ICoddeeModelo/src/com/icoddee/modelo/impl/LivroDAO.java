@@ -1,15 +1,18 @@
-package com.icoddee.modelo.imp;
+package com.icoddee.modelo.impl;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import com.icoddee.entidade.Livro;
-import com.icoddee.modelo.inter.IRepositorioLivro;
+import javax.persistence.EntityManager;
+
+import com.icoddee.modelo.IRepositorioLivro;
+import com.icoddee.modelo.entidade.Livro;
 
 public class LivroDAO implements IRepositorioLivro {
+	private EntityManager em;
 	
-	public LivroDAO(){
-	
+	public LivroDAO(EntityManager em){
+		this.em = em;
 	}
 
 	@Override

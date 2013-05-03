@@ -1,8 +1,8 @@
-package com.icoddee.modelo.inter;
+package com.icoddee.modelo;
 
 import java.util.List;
 
-import com.icoddee.entidade.Emprestimo;
+import com.icoddee.modelo.entidade.Emprestimo;
 
 public interface IRepositorioEmprestimo {
 	

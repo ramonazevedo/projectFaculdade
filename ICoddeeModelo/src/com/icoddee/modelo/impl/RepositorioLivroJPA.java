@@ -1,12 +1,12 @@
-package com.icoddee.modelo.imp;
+package com.icoddee.modelo.impl;
 
 import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import com.icoddee.entidade.Livro;
-import com.icoddee.modelo.inter.IRepositorioLivro;
+import com.icoddee.modelo.IRepositorioLivro;
+import com.icoddee.modelo.entidade.Livro;
 
 public class RepositorioLivroJPA implements IRepositorioLivro {
 

@@ -1,4 +1,4 @@
-package com.icoddee.entidade;
+package com.icoddee.modelo.entidade;
 
 /**
  * @author Jocelio Lima
