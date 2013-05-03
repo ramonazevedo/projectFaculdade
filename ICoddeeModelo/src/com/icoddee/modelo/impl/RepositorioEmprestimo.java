@@ -14,8 +14,6 @@ public class RepositorioEmprestimo implements IRepositorioEmprestimo{
 	
 	private EntityManager em;
 	
-	
-
 	public RepositorioEmprestimo(EntityManager em) {
 		this.em = em;
 	}

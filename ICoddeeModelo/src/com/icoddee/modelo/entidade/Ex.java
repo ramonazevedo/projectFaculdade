@@ -1,15 +1,11 @@
 package com.icoddee.modelo.entidade;
 
 
-import java.util.List;
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
 
 import com.icoddee.modelo.IRepositorioLivro;
 import com.icoddee.modelo.fabrica.RepositorioFabrica;
-import com.icoddee.modelo.impl.RepositorioLivroJPA;
 
 
 public class Ex {
