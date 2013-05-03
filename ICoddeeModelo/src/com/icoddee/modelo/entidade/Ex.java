@@ -5,7 +5,7 @@ package com.icoddee.modelo.entidade;
 
 
 import com.icoddee.modelo.IRepositorioLivro;
-import com.icoddee.modelo.fabrica.RepositorioFabrica;
+import com.icoddee.modelo.fabrica.IcoddeeFactory;
 
 
 public class Ex {
@@ -17,7 +17,7 @@ public class Ex {
 		Livro livro = new Livro(1, "hehe", "ee","ee", 3005, true, 65, 665);
 	
 		
-		IRepositorioLivro repositorioLivro = (IRepositorioLivro) new RepositorioFabrica().criar(RepositorioFabrica.LivroJPA);
+		IRepositorioLivro repositorioLivro =  new IcoddeeFactory().criarLivroDAO(IcoddeeFactory.LivroJPA);
 		
 		
 		repositorioLivro.cadastrar(livro);
