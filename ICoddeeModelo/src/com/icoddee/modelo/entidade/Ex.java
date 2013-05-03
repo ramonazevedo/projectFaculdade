@@ -19,7 +19,6 @@ public class Ex {
 		
 		IRepositorioLivro repositorioLivro =  new IcoddeeFactory().criarLivroDAO(IcoddeeFactory.LivroJPA);
 		
-		
 		repositorioLivro.cadastrar(livro);
 		repositorioLivro.excluir(livro);
 		
