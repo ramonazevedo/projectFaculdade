@@ -22,7 +22,7 @@ public class RepositorioLivroJPA implements IRepositorioLivro {
 		em.getTransaction().begin();
 		em.remove(livro);
 		em.getTransaction().commit();
-
+		em.close();
 	}
 
 	@Override
@@ -30,6 +30,7 @@ public class RepositorioLivroJPA implements IRepositorioLivro {
 		em.getTransaction().begin();
 		em.merge(livro);
 		em.getTransaction().commit();
+		em.close();
 	}
 
 	@Override
@@ -37,6 +38,7 @@ public class RepositorioLivroJPA implements IRepositorioLivro {
 		em.getTransaction().begin();
 		em.merge(livro);
 		em.getTransaction().commit();
+		em.close();
 	}
 
 	@Override
@@ -45,6 +47,7 @@ public class RepositorioLivroJPA implements IRepositorioLivro {
 		Query q = em.createQuery("select livro from Livro livro");
 		this.livros = q.getResultList();
 		em.getTransaction().commit();
+		em.close();
 		return this.livros;
 	}
 
@@ -54,6 +57,7 @@ public class RepositorioLivroJPA implements IRepositorioLivro {
 			em.getTransaction().begin();
 			l = em.find(Livro.class, livro.getId());
 			em.getTransaction().commit();
+			em.close();
 		}
 		return l;
 	}

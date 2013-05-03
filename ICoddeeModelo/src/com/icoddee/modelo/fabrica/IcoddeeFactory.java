@@ -13,8 +13,7 @@ public class IcoddeeFactory {
 	private EntityManagerFactory emf;
 	private EntityManager em;
 	
-	public static final int LivroDAO = 0;
-	public static final int LivroJPA = 1;
+	public static final int LivroJPA = 0;
 	public static final int EmprestimoDAO = 2;
 
 	public IcoddeeFactory(){
@@ -26,8 +25,6 @@ public class IcoddeeFactory {
 		
 		switch (dao) {
 		case 0:
-			return new LivroDAO(em);
-		case 1:
 			return new RepositorioLivroJPA(em);			
 		default: 
 			return null;

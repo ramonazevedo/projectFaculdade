@@ -21,6 +21,7 @@ public class Ex {
 		
 		
 		repositorioLivro.cadastrar(livro);
+		repositorioLivro.excluir(livro);
 		
 		
 
